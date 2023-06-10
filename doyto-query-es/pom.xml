@@ -15,31 +15,25 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>win.doyto</groupId>
-        <artifactId>doyto-oss-parent</artifactId>
-        <version>3</version>
+        <artifactId>doyto-query-es-repo</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>doyto-query-es-repo</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <url>https://www.doyto.win/</url>
+    <artifactId>doyto-query-es</artifactId>
 
-    <modules>
-        <module>doyto-query-es</module>
-    </modules>
-
-    <scm>
-        <tag>main</tag>
-        <url>https://github.com/doytowin/doyto-query-es-repo</url>
-        <connection>scm:git:https://github.com/doytowin/doyto-query-es-repo.git</connection>
-        <developerConnection>scm:git:https://github.com/doytowin/doyto-query-es-repo.git</developerConnection>
-    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>win.doyto</groupId>
+            <artifactId>doyto-query-api</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+    </dependencies>
 
 </project>
