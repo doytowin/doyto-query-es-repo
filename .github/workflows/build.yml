@@ -1,0 +1,23 @@
+name: Maven Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Call Build Workflow
+    uses: doytowin/doyto-devops/.github/workflows/build.yml@main
+    secrets: inherit
+    with:
+      sonar-project-name: 'doyto-query-template'
+      sonar-project-key: 'win.doyto:doyto-query-template'
+  deploy:
+    name: Call Deploy Workflow
+    needs: build
+    if: github.event_name != 'pull_request'
+    uses: doytowin/doyto-devops/.github/workflows/deploy.yml@main
+    secrets: inherit
