@@ -13,8 +13,8 @@ jobs:
     uses: doytowin/doyto-devops/.github/workflows/build.yml@main
     secrets: inherit
     with:
-      sonar-project-name: 'doyto-query-template'
-      sonar-project-key: 'win.doyto:doyto-query-template'
+      sonar-project-name: 'doyto-query-es-repo'
+      sonar-project-key: 'win.doyto:doyto-query-es-repo'
   deploy:
     name: Call Deploy Workflow
     needs: build
